@@ -1,0 +1,89 @@
+
+
+
+
+
+appCodeName: Mozilla
+appName: Netscape
+device name: 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0
+cookieEnabled: true
+doNotTrack: 
+geolocation: [object Geolocation]
+getBattery: 
+getGamepads: function getGamepads() { [native code] }
+getStorageUpdates: undefined
+hardwareConcurrency: 8
+javaEnabled: function javaEnabled() { [native code] }
+language: en-US
+languages: en-US,en,ar
+maxTouchPoints: 0
+mimeTypes: [object MimeTypeArray]
+onLine: true
+permissions: [object Permissions]
+platform: Win32
+plugins: [object PluginArray]
+product: Gecko
+productSub: 20030107
+registerProtocolHandler: function registerProtocolHandler() { [native code] }
+requestMediaKeySystemAccess: function requestMediaKeySystemAccess() { [native code] }
+requestMIDIAccess: function requestMIDIAccess() { [native code] }
+sendBeacon: function sendBeacon() { [native code] }
+serviceWorker: [object ServiceWorkerContainer]
+unregisterProtocolHandler: function unregisterProtocolHandler() { [native code] }
+userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0
+vendor: Google Inc.
+vendorSub: 
+vibrate: function vibrate() { [native code] }
+webkitGetUserMedia: function webkitGetUserMedia() { [native code] }
+webkitPersistentStorage: [object DeprecatedStorageQuota]
+webkitTemporaryStorage: [object DeprecatedStorageQuota]
+mobile_name: 
+deviceDetails: on a Desktopusing a Microsoft Edge
+preloader: 
+browser: 120
+os: 
+text: You are running chrome 120 on windows
+
+
+
+
+appCodeName: Mozilla
+appName: Netscape
+device name: 5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0
+cookieEnabled: true
+doNotTrack: 
+geolocation: [object Geolocation]
+getBattery: 
+getGamepads: function getGamepads() { [native code] }
+getStorageUpdates: undefined
+hardwareConcurrency: 8
+javaEnabled: function javaEnabled() { [native code] }
+language: en-US
+languages: en-US,en,ar
+maxTouchPoints: 0
+mimeTypes: [object MimeTypeArray]
+onLine: true
+permissions: [object Permissions]
+platform: Win32
+plugins: [object PluginArray]
+product: Gecko
+productSub: 20030107
+registerProtocolHandler: function registerProtocolHandler() { [native code] }
+requestMediaKeySystemAccess: function requestMediaKeySystemAccess() { [native code] }
+requestMIDIAccess: function requestMIDIAccess() { [native code] }
+sendBeacon: function sendBeacon() { [native code] }
+serviceWorker: [object ServiceWorkerContainer]
+unregisterProtocolHandler: function unregisterProtocolHandler() { [native code] }
+userAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0
+vendor: Google Inc.
+vendorSub: 
+vibrate: function vibrate() { [native code] }
+webkitGetUserMedia: function webkitGetUserMedia() { [native code] }
+webkitPersistentStorage: [object DeprecatedStorageQuota]
+webkitTemporaryStorage: [object DeprecatedStorageQuota]
+mobile_name: 
+deviceDetails: on a Desktopusing a Microsoft Edge
+preloader: 
+browser: 120
+os: 
+text: You are running chrome 120 on windows

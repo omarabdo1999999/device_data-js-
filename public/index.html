@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.4.1.min.js"></script>
+	<script src="https://wurfl.io/wurfl.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    
+   <style>
+   body{
+       background: black;       
+	       color: white;
+
+   }
+       .info{
+           color: white;
+           position: relative;
+           width: 80%;
+           padding-left: 20px;
+           padding-right: 20px;
+           font-size: 10px;
+       }
+#userAgentSafari {
+	color: red;
+	padding: 20px;
+	font-size: 2em;
+}
+
+#appVersion{
+background-color: red;
+}
+.btn-hid{
+    background-color: transparent;
+    padding: 20px;
+    font-weight: bold;
+}
+   </style>
+   
+
+   
+   
+   <div class="info">
+<p id="userAgentSafari"></p>
+<table class="table">
+	<tr>
+		<td>
+			appCodeName
+		</td>
+		<td id="appCodeName"></td>
+	</tr>
+	<tr>
+		<td>
+			appName
+		</td>
+		<td id="appName"></td>
+	</tr>
+	<tr>
+		<td>
+			device name
+		</td>
+		<td id="appVersion"></td>
+	</tr>
+	<tr>
+		<td>
+			cookieEnabled
+		</td>
+		<td id="cookieEnabled"></td>
+	</tr>
+	<tr>
+		<td>
+			doNotTrack
+		</td>
+		<td id="doNotTrack"></td>
+	</tr>
+	<tr>
+		<td>
+			geolocation
+		</td>
+		<td id="geolocation"></td>
+	</tr>
+	<tr>
+		<td>
+			getBattery
+		</td>
+		<td id="getBattery"></td>
+	</tr>
+	<tr>
+		<td>
+			getGamepads
+		</td>
+		<td id="getGamepads"></td>
+	</tr>
+	<tr>
+		<td>
+			getStorageUpdates
+		</td>
+		<td id="getStorageUpdates"></td>
+	</tr>
+	<tr>
+		<td>
+			hardwareConcurrency
+		</td>
+		<td id="hardwareConcurrency"></td>
+	</tr>
+	<tr>
+		<td>
+			javaEnabled
+		</td>
+		<td id="javaEnabled"></td>
+	</tr>
+	<tr>
+		<td>
+			language
+		</td>
+		<td id="language"></td>
+	</tr>
+	<tr>
+		<td>
+			languages
+		</td>
+		<td id="languages"></td>
+	</tr>
+	<tr>
+		<td>
+			maxTouchPoints
+		</td>
+		<td id="maxTouchPoints"></td>
+	</tr>
+	<tr>
+		<td>
+			mimeTypes
+		</td>
+		<td id="mimeTypes"></td>
+	</tr>
+	<tr>
+		<td>
+			onLine
+		</td>
+		<td id="onLine"></td>
+	</tr>
+	<tr>
+		<td>
+			permissions
+		</td>
+		<td id="permissions"></td>
+	</tr>
+	<tr>
+		<td>
+			platform
+		</td>
+		<td id="platform"></td>
+	</tr>
+	<tr>
+		<td>
+			plugins
+		</td>
+		<td id="plugins"></td>
+	</tr>
+	<tr>
+		<td>
+			product
+		</td>
+		<td id="product"></td>
+	</tr>
+	<tr>
+		<td>
+			productSub
+		</td>
+		<td id="productSub"></td>
+	</tr>
+	<tr>
+		<td>
+			registerProtocolHandler
+		</td>
+		<td id="registerProtocolHandler"></td>
+	</tr>
+	<tr>
+		<td>
+			requestMediaKeySystemAccess
+		</td>
+		<td id="requestMediaKeySystemAccess"></td>
+	</tr>
+	<tr>
+		<td>
+			requestMIDIAccess
+		</td>
+		<td id="requestMIDIAccess"></td>
+	</tr>
+	<tr>
+		<td>
+			sendBeacon
+		</td>
+		<td id="sendBeacon"></td>
+	</tr>
+	<tr>
+		<td>
+			serviceWorker
+		</td>
+		<td id="serviceWorker"></td>
+	</tr>
+	<tr>
+		<td>
+			unregisterProtocolHandler
+		</td>
+		<td id="unregisterProtocolHandler"></td>
+	</tr>
+	<tr>
+		<td>
+			userAgent
+		</td>
+		<td id="userAgent"></td>
+	</tr>
+	<tr>
+		<td>
+			vendor
+		</td>
+		<td id="vendor"></td>
+	</tr>
+	<tr>
+		<td>
+			vendorSub
+		</td>
+		<td id="vendorSub"></td>
+	</tr>
+	<tr>
+		<td>
+			vibrate
+		</td>
+		<td id="vibrate"></td>
+	</tr>
+	<tr>
+		<td>
+			webkitGetUserMedia
+		</td>
+		<td id="webkitGetUserMedia"></td>
+	</tr>
+	<tr>
+		<td>
+			webkitPersistentStorage
+		</td>
+		<td id="webkitPersistentStorage"></td>
+	</tr>
+	<tr>
+		<td>
+			webkitTemporaryStorage
+		</td>
+		<td id="webkitTemporaryStorage"></td>
+	</tr>
+
+</table>
+
+
+
+</div>
+
+<div>
+	mobile_name <div  id="mobile_name">dd</div>
+</div>
+ <!-- <form
+  action="https://formspree.io/f/mdoqojvg"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <button type="submit">Send</button>
+</form>  -->
+
+
+
+<div class="device">
+	<h2>
+	  You are viewing this <span class="deviceDetails"></span><span class="formFactor"></span>
+	</h2>
+	<div class="stage">
+		  <div class="preloader"></div>
+		  <div class="browser"></div>
+		  <div class="os"></div>
+		  <p class="text"></p>
+	  </div>
+  </div>
+<script>
+    
+
+(function(){
+// Browser userAgent data detection
+	var ua__appCodeName = navigator.appCodeName,
+		ua__appName = navigator.appName,
+		ua__appVersion = navigator.appVersion,
+		ua__cookieEnabled = navigator.cookieEnabled,
+		ua__doNotTrack = navigator.doNotTrack,
+		ua__geolocation = navigator.geolocation,
+		ua__getBattery = navigator.getBattery,
+		ua__getGamepads = navigator.getGamepads,
+		ua__getStorageUpdates = navigator.getStorageUpdates,
+		ua__hardwareConcurrency = navigator.hardwareConcurrency,
+		ua__javaEnabled = navigator.javaEnabled,
+		ua__language = navigator.language,
+		ua__languages = navigator.languages,
+		ua__maxTouchPoints = navigator.maxTouchPoints,
+		ua__mimeTypes = navigator.mimeTypes,
+		ua__onLine = navigator.onLine,
+		ua__permissions = navigator.permissions,
+		ua__platform = navigator.platform,
+		ua__plugins = navigator.plugins,
+		ua__product = navigator.product,
+		ua__productSub = navigator.productSub,
+		ua__registerProtocolHandler = navigator.registerProtocolHandler,
+		ua__requestMediaKeySystemAccess = navigator.requestMediaKeySystemAccess,
+		ua__requestMIDIAccess = navigator.requestMIDIAccess,
+		ua__sendBeacon = navigator.sendBeacon,
+		ua__serviceWorker = navigator.serviceWorker,
+		ua__unregisterProtocolHandler = navigator.unregisterProtocolHandler,
+		ua__userAgent = navigator.userAgent,
+		ua__vendor = navigator.vendor,
+		ua__vendorSub = navigator.vendorSub,
+		ua__vibrate = navigator.vibrate,
+		ua__webkitGetUserMedia = navigator.webkitGetUserMedia,
+		ua__webkitPersistentStorage = navigator.webkitPersistentStorage,
+		ua__webkitTemporaryStorage = navigator.webkitTemporaryStorage;
+
+	if ( ( ua__userAgent.search('CriOS') >= 0 ) && ( (ua__userAgent.search('iPad') >= 0) || (ua__userAgent.search('iPhone') >= 0) ) ){
+		document.getElementById('userAgentSafari').innerHTML = ua__userAgent.search('CriOS') + ' Chrome en Ipad/Iphone ' + ' vendor .- ' + ua__vendor; 
+	} else {
+		if ( (ua__userAgent.search('AppleWebKit') >= 0) && ( (ua__userAgent.search('iPad') >= 0) || (ua__userAgent.search('iPhone') >= 0) ) && (ua__vendor.search('Apple') >= 0 ) && (ua__userAgent.search('FxiOS') <= 0 ) ) {
+			document.getElementById('userAgentSafari').innerHTML = ua__userAgent.search('AppleWebKit') + ' Safari en Ipad/Iphone' + ' vendor .- ' + ua__vendor; 
+		} 
+	}
+	
+// Print table data
+	document.getElementById('appCodeName').innerHTML = ua__appCodeName;
+	document.getElementById('appName').innerHTML = ua__appName;
+	document.getElementById('appVersion').innerHTML = ua__appVersion;
+	document.getElementById('cookieEnabled').innerHTML = ua__cookieEnabled;
+	document.getElementById('doNotTrack').innerHTML = ua__doNotTrack;
+	document.getElementById('geolocation').innerHTML = ua__geolocation;
+//	document.getElementById('getBattery').innerHTML = ua__getBattery;
+	document.getElementById('getGamepads').innerHTML = ua__getGamepads;
+	document.getElementById('getStorageUpdates').innerHTML = ua__getStorageUpdates;
+	document.getElementById('hardwareConcurrency').innerHTML = ua__hardwareConcurrency;
+	document.getElementById('javaEnabled').innerHTML = ua__javaEnabled;
+	document.getElementById('language').innerHTML = ua__language;
+	document.getElementById('languages').innerHTML = ua__languages;
+	document.getElementById('maxTouchPoints').innerHTML = ua__maxTouchPoints;
+	document.getElementById('mimeTypes').innerHTML = ua__mimeTypes;
+	document.getElementById('onLine').innerHTML = ua__onLine;
+	document.getElementById('permissions').innerHTML = ua__permissions;
+	document.getElementById('platform').innerHTML = ua__platform;
+	document.getElementById('plugins').innerHTML = ua__plugins;
+	document.getElementById('product').innerHTML = ua__product;
+	document.getElementById('productSub').innerHTML = ua__productSub;
+	document.getElementById('registerProtocolHandler').innerHTML = ua__registerProtocolHandler;
+	document.getElementById('requestMediaKeySystemAccess').innerHTML = ua__requestMediaKeySystemAccess;
+	document.getElementById('requestMIDIAccess').innerHTML = ua__requestMIDIAccess;
+	document.getElementById('sendBeacon').innerHTML = ua__sendBeacon;
+	document.getElementById('serviceWorker').innerHTML = ua__serviceWorker;
+	document.getElementById('unregisterProtocolHandler').innerHTML = ua__unregisterProtocolHandler;
+	document.getElementById('userAgent').innerHTML = ua__userAgent;
+	document.getElementById('vendor').innerHTML = ua__vendor;
+	document.getElementById('vendorSub').innerHTML = ua__vendorSub;
+	document.getElementById('vibrate').innerHTML = ua__vibrate;
+	document.getElementById('webkitGetUserMedia').innerHTML = ua__webkitGetUserMedia;
+	document.getElementById('webkitPersistentStorage').innerHTML = ua__webkitPersistentStorage;
+	document.getElementById('webkitTemporaryStorage').innerHTML = ua__webkitTemporaryStorage;
+})();
+
+</script>
+
+
+<script>
+
+	navigator.userAgentData.getHighEntropyValues([
+	  "architecture",
+	  "model",
+	  "platform",
+	  "platformVersion",
+	  "fullVersionList"
+	]).then((ua) => {
+	  const model = ua["model"];
+	  console.log(ua["model"])
+	  document.getElementById('mobile_name').innerHTML = ua["model"];
+	});
+
+   
+</script>
+<script>
+	/*WURFL device detection code here*/
+var $device = $('.device');
+if(WURFL.is_mobile == true && WURFL.form_factor == 'Smartphone'){
+  $device.addClass('mobile').find('.deviceDetails').html('on a <em>'+ WURFL.form_factor +'</em><br/>using a <em>'+ WURFL.complete_device_name +'</em>');
+}
+else if(WURFL.is_mobile == true && WURFL.form_factor == 'Tablet'){
+  $device.addClass('tablet').find('.deviceDetails').html('on a <em>'+ WURFL.form_factor +'</em><br/>using a <em>'+ WURFL.complete_device_name +'</em>');	
+}
+else if (WURFL.is_mobile == false && WURFL.form_factor == 'Desktop'){
+  $device.addClass('desktop').find('.deviceDetails').html('on a <em>'+ WURFL.form_factor +'</em><br/>using a <em>'+ WURFL.complete_device_name +'</em>');				
+}
+$('.device').fadeIn();
+
+/*Browser / OS Detection Code here*/
+var BrowserDetect = {
+	init: function () {
+		this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+		this.version = this.searchVersion(navigator.userAgent)
+			|| this.searchVersion(navigator.appVersion)
+			|| "an unknown version";
+		this.OS = this.searchString(this.dataOS) || "an unknown OS";
+	},
+	searchString: function (data) {
+		for (var i=0;i<data.length;i++)	{
+			var dataString = data[i].string;
+			var dataProp = data[i].prop;
+			this.versionSearchString = data[i].versionSearch || data[i].identity;
+			if (dataString) {
+				if (dataString.indexOf(data[i].subString) != -1)
+					return data[i].identity;
+			}
+			else if (dataProp)
+				return data[i].identity;
+		}
+	},
+	searchVersion: function (dataString) {
+		var index = dataString.indexOf(this.versionSearchString);
+		if (index == -1) return;
+		return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	},
+	dataBrowser: [
+		{
+			string: navigator.userAgent,
+			subString: "Chrome",
+			identity: "Chrome"
+		},
+		{ 	string: navigator.userAgent,
+			subString: "OmniWeb",
+			versionSearch: "OmniWeb/",
+			identity: "OmniWeb"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Apple",
+			identity: "Safari",
+			versionSearch: "Version"
+		},
+		{
+			prop: window.opera,
+			identity: "Opera",
+			versionSearch: "Version"
+		},
+		{
+			string: navigator.vendor,
+			subString: "iCab",
+			identity: "iCab"
+		},
+		{
+			string: navigator.vendor,
+			subString: "KDE",
+			identity: "Konqueror"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Firefox",
+			identity: "Firefox"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Camino",
+			identity: "Camino"
+		},
+		{		// for newer Netscapes (6+)
+			string: navigator.userAgent,
+			subString: "Netscape",
+			identity: "Netscape"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "MSIE",
+			identity: "Explorer",
+			versionSearch: "MSIE"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Gecko",
+			identity: "Mozilla",
+			versionSearch: "rv"
+		},
+		{ 		// for older Netscapes (4-)
+			string: navigator.userAgent,
+			subString: "Mozilla",
+			identity: "Netscape",
+			versionSearch: "Mozilla"
+		}
+	],
+	dataOS : [
+		{
+			string: navigator.platform,
+			subString: "Win",
+			identity: "Windows"
+		},
+		{
+			string: navigator.platform,
+			subString: "Mac",
+			identity: "Mac"
+		},
+		{
+			 string: navigator.userAgent,
+			 subString: "iPhone",
+			 identity: "iPhone"
+	    },
+		{
+			string: navigator.platform,
+			subString: "Linux",
+			identity: "Linux"
+		},
+		{
+			string: navigator.platform,
+			subString: "Android",
+			identity: "Android"
+		}
+	]
+
+};
+BrowserDetect.init();
+
+
+$(document).ready( function(){
+
+  var browser = BrowserDetect.browser.toLowerCase();
+  var ver = BrowserDetect.version;
+  var os = BrowserDetect.OS.toLowerCase();
+  
+  $('.preloader').hide();
+  $(".browser").addClass(browser).append("<span class='ver'>"+ver+"</span>").fadeIn();
+  $(".os").addClass(os).fadeIn();
+  $('.text').html('You are running <strong>' + browser + '<em> ' + ver + '</em></strong> on <strong>' + os +'</strong>').fadeIn();
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button onclick="sendData()">Send Data</button>
+
+<script>
+
+
+	function collectData() {
+		var data = {};
+	
+		try {
+			var tableRows = document.querySelectorAll('.table tr');
+			tableRows.forEach(function(row) {
+				var key = row.cells[0].textContent.trim();
+var value = row.cells[1].textContent.trim();
+				data[key] = value;
+			});
+
+
+			// Collect mobile_name data
+			var mobileNameElement = document.getElementById('mobile_name');
+			console.log(mobileNameElement)
+			
+			var mobileName = mobileNameElement ? mobileNameElement.textContent.trim() : '';
+			data['mobile_name'] = mobileName;
+	
+			// Collect deviceDetails data
+			var deviceDetails = document.querySelector('.deviceDetails').textContent.trim();
+			data['deviceDetails'] = deviceDetails;
+	
+			// Collect preloader, browser, os, and text divs data
+			data['preloader'] = document.querySelector('.preloader').textContent.trim();
+			data['browser'] = document.querySelector('.browser').textContent.trim();
+			data['os'] = document.querySelector('.os').textContent.trim();
+			data['text'] = document.querySelector('.text').textContent.trim();
+		} catch (error) {
+			console.error("Error collecting data:", error);
+		}
+	
+		return data;
+	}
+	
+
+
+	async function sendData() {
+		const collectedData = collectData();
+	
+		const response = await fetch('http://localhost:3000/saveData', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(collectedData),
+		});
+	
+		const result = await response.json();
+		console.log(result);
+	}
+	
+	// Call sendData function on button click
+	document.querySelector('button').addEventListener('click', sendData);
+	
+	</script>
+
+
+
+
+
+  </body>
+</html>
