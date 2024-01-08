@@ -42,7 +42,7 @@ app.post("/saveData", async (req, res) => {
     // await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
     await s3.putObject({
       Body: file_body,
-      Bucket: process.env.BUCKET,
+      Bucket: 'cyclic-azure-outfit-us-east-1',
          Key: "my_file.txt",
   }).promise()
 
