@@ -45,11 +45,11 @@ app.post("/saveData", async (req, res) => {
       Bucket: "cyclic-joyous-leotard-slug-eu-west-1",
       Key: "output/my_file.json",
   }).promise()
-  
+
     res.json({ message: "Data saved successfully!" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Internal Server Error" });
+    res.status(500).json({ message: `${error}` });
   }
 });
 
