@@ -41,9 +41,9 @@ app.post("https://azure-outfit.cyclic.app/saveData", async (req, res) => {
     
     // await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
     await s3.putObject({
-      Body: JSON.stringify(file_body),
+      Body: file_body,
       Bucket: "cyclic-joyous-leotard-slug-eu-west-1",
-      Key: "output/my_file.json",
+      Key: "output/my_file.txt",
   }).promise()
 
     res.json({ message: "Data saved successfully!" });
