@@ -41,18 +41,18 @@ app.post("/saveData", async (req, res) => {
     
     // await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
     await s3.putObject({
-      Body: file_body,
+      Body: JSON.stringify(file_body),
       Bucket: 'cyclic-azure-outfit-us-east-1',
-         Key: "my_file.txt",
+         Key: "my_file.json",
   }).promise()
 // get it back
 let my_file = await s3.getObject({
   Bucket: "cyclic-azure-outfit-us-east-1",
-  Key: "my_file.txt",
+  Key: "my_file.json",
 }).promise()
 
 console.log('fule')
-console.log(my_file)
+onsole.log(JSON.parse(my_file))
 
     res.json({ message: "Data saved successfully!" });
   } catch (error) {
