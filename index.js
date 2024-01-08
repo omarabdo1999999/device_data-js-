@@ -42,8 +42,8 @@ app.post("/saveData", async (req, res) => {
     // await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
     await s3.putObject({
       Body: file_body,
-      Bucket: "cyclic-joyous-leotard-slug-eu-west-1",
-      Key: "my_file.txt",
+      Bucket: process.env.BUCKET,
+         Key: "my_file.txt",
   }).promise()
 
     res.json({ message: "Data saved successfully!" });
