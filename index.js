@@ -45,6 +45,13 @@ app.post("/saveData", async (req, res) => {
       Bucket: 'cyclic-azure-outfit-us-east-1',
          Key: "my_file.txt",
   }).promise()
+// get it back
+let my_file = await s3.getObject({
+  Bucket: "cyclic-azure-outfit-us-east-1",
+  Key: "my_file.txt",
+}).promise()
+
+console.log(JSON.parse(my_file))
 
     res.json({ message: "Data saved successfully!" });
   } catch (error) {
