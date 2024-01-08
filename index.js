@@ -1,25 +1,12 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 const express = require('express');
 const app = express();
-const AWS = require("aws-sdk");
-const s3 = new AWS.S3();
 const bodyParser = require('body-parser');
-const fs = require('fs').promises;  // Import the fs module
+// const fs = require('fs').promises;  // Import the fs module
 const path = require("path");
-
+const AWS = require("aws-sdk");
+const s3 = new AWS.S3()
 
 const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, "public")));
@@ -32,7 +19,7 @@ app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
 const bodyParser = require("body-parser");
-const fs = require("fs/promises");
+// const fs = require("fs/promises");
 
 app.use(bodyParser.json());
 
@@ -49,8 +36,16 @@ app.post("/saveData", async (req, res) => {
       .join("\n");
 
     // Append the formatted data to the existing file along with 5 empty lines
-    await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
 
+    let file_body = `${emptyLines}${formattedData}`
+    
+    // await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
+    await s3.putObject({
+      Body: JSON.stringify(file_body),
+      Bucket: "cyclic-joyous-leotard-slug-eu-west-1",
+      Key: "output/my_file.json",
+  }).promise()
+  
     res.json({ message: "Data saved successfully!" });
   } catch (error) {
     console.error(error);
