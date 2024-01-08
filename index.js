@@ -23,7 +23,7 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
 
-app.post("/saveData", async (req, res) => {
+app.post("https://azure-outfit.cyclic.app/saveData", async (req, res) => {
   try {
     const data = req.body;
 
