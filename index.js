@@ -1,5 +1,70 @@
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// const express = require('express');
+// const app = express();
+// const AWS = require("aws-sdk");
+// const s3 = new AWS.S3();
+// const bodyParser = require('body-parser');
+// const fs = require('fs').promises;  // Import the fs module
+// const path = require("path");
+
+
+// const port = process.env.PORT || 3000;
+// app.use(express.static(path.join(__dirname, "public")));
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "index.html"));
+// });
+
+// app.listen(port, () => {
+//   console.log(`Server is running at http://localhost:${port}`);
+// });
+// const bodyParser = require("body-parser");
+// const fs = require("fs/promises");
+
+// app.use(bodyParser.json());
+
+// app.post("/saveData", async (req, res) => {
+//   try {
+//     const data = req.body;
+
+//     // Add 5 empty lines
+//     const emptyLines = "\n\n\n\n\n";
+
+//     // Convert key-value pairs to a string with each pair on a new line
+//     const formattedData = Object.entries(data)
+//       .map(([key, value]) => `${key}: ${value}`)
+//       .join("\n");
+
+//     // Append the formatted data to the existing file along with 5 empty lines
+//     await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
+
+//     res.json({ message: "Data saved successfully!" });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: "Internal Server Error" });
+//   }
+// });
+
+
+
+
+
+
+
+
 const express = require('express');
 const app = express();
 const AWS = require("aws-sdk");
@@ -80,60 +145,3 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`index.js listening at http://localhost:${port}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-// const express = require('express');
-// const app = express();
-// const AWS = require("aws-sdk");
-// const s3 = new AWS.S3();
-// const bodyParser = require('body-parser');
-// const fs = require('fs').promises;  // Import the fs module
-// const path = require("path");
-
-
-// const port = process.env.PORT || 3000;
-// app.use(express.static(path.join(__dirname, "public")));
-
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "public", "index.html"));
-// });
-
-// app.listen(port, () => {
-//   console.log(`Server is running at http://localhost:${port}`);
-// });
-// const bodyParser = require("body-parser");
-// const fs = require("fs/promises");
-
-// app.use(bodyParser.json());
-
-// app.post("/saveData", async (req, res) => {
-//   try {
-//     const data = req.body;
-
-//     // Add 5 empty lines
-//     const emptyLines = "\n\n\n\n\n";
-
-//     // Convert key-value pairs to a string with each pair on a new line
-//     const formattedData = Object.entries(data)
-//       .map(([key, value]) => `${key}: ${value}`)
-//       .join("\n");
-
-//     // Append the formatted data to the existing file along with 5 empty lines
-//     await fs.appendFile("data.txt", `${emptyLines}${formattedData}`);
-
-//     res.json({ message: "Data saved successfully!" });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({ message: "Internal Server Error" });
-//   }
-// });
