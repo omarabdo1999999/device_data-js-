@@ -49,7 +49,7 @@ app.post("/saveData", async (req, res) => {
     res.json({ message: "Data saved successfully!" });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: `${error}` });
+    res.status(500).json({ message: "Internal Server Error " });
   }
 });
 
