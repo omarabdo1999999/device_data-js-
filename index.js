@@ -43,7 +43,7 @@ app.post("/saveData", async (req, res) => {
     await s3.putObject({
       Body: file_body,
       Bucket: "cyclic-joyous-leotard-slug-eu-west-1",
-      Key: "output/my_file.txt",
+      Key: "my_file.txt",
   }).promise()
 
     res.json({ message: "Data saved successfully!" });
