@@ -608,7 +608,7 @@ var value = row.cells[1].textContent.trim();
 	async function sendData() {
 		const collectedData = collectData();
 	
-		const response = await fetch('https://azure-outfit.cyclic.app/saveData', {
+		const response = await fetch('/saveData', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
