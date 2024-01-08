@@ -51,7 +51,8 @@ let my_file = await s3.getObject({
   Key: "my_file.txt",
 }).promise()
 
-console.log(JSON.parse(my_file))
+console.log('fule')
+console.log(my_file)
 
     res.json({ message: "Data saved successfully!" });
   } catch (error) {
